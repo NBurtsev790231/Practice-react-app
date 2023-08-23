@@ -8,12 +8,12 @@ export default function Test() {
   function testAge() {
     if (age >= 18) {
       return (<h1>Good</h1>);
-     } else {
+    } else {
       return (<h1>Bad!</h1>);
-      }
     }
+  }
 
   return (
-  <div>{testAge()}</div>
+    <div>{testAge()}</div>
   );
 };
