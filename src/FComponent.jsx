@@ -1,7 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './style.css';
 
-export default function FComponent() {
+function FComponent() {
+  const [numbers, setNumbers] = useState([1,2,3]);
+
+  const allNumber = () => {
+    const randNumber = Math.round(Math.random() * 100);
+    setNumbers([...numbers, randNumber]);
+  };
+
+
+  
   return (
-    <h2>FComponent</h2>
+    <div className="itemList">
+      <ul>
+        {numbers.map((num, index) => (
+          <li key={index}>{num}</li>
+        ))}
+      </ul>
+      <button onClick={allNumber} className="button">
+        Новое число</button>
+    </div>
   );
 }
+
+export default FComponent;
+
+
+  
+
